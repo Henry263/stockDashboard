@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/js/7.13.0/anychart-bundle.min.js"></script>
+    <script src="scripts/main_file.js"></script>
+    <script src="scripts/testyahoo.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+    <link rel="stylesheet" href="https://cdn.anychart.com/css/7.13.0/anychart-ui.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="darkLayer" class="overlay" style="display:none"></div>
+
+    <div>
+        <div class="portfolio_chart">
+            <div id="portfolioChart"></div>
+        </div>
+        <div class="add_btn">
+            <a href="#" id="open" class="addstk_btn btn_style">Click me to Add the stock to the portfolio</a>
+            <a href="#" id="newsignUp" class="newUser_btn btn_style">New User button</a>
+        </div>
+        <div class="add_btn">
+
+        </div>
+    </div>
+
+    <div class="stock_table_data">
+        <table style="width:100%" id="stockTab">
+            <tr class="table_heading">
+                <th>Stock</th>
+                <th>Quantity</th>
+                <th>Total Investment</th>
+                <th>Buy Price</th>
+                <th>Current Price</th>
+                <th>Current Difference</th>
+                <th>Last Change ($)</th>
+                <th>Up(+)</th>
+                <th>Down(-)</th>
+                <th>Current Portfolio</th>
+            </tr>
+
+        </table>
+    </div>
+    <div class="eachstock">
+
+    </div>
+    <div id="dialog">
+        <div class="formcontainer">
+            <div class="left_col">
+                <div class="left_part">
+                    <div class="spacing">
+                        <div class="formlbl"><span><label class="stc_name">StockName(Like "FB" for facebook)</label></span></div>
+                        <div class="forminpt">
+                            <span><input class="txtbox_style stc_name_txt" type="text" data-intype="text"/></span>
+                            <span class="icon-tip"><i class="fa fa-exclamation-triangle tooltip-contain">
+                            <span class="tooltiptext">Accept only alphabets.</span></i></span>
+                        </div>
+                    </div>
+                    <div class="spacing">
+                        <div class="formlbl"><span><label class="stc_price">Stock buying Price(Like sample 123.45)</label></span></div>
+                        <div class="forminpt">
+                            <span><input class="txtbox_style stc_price_txt" type="text" data-intype="num"/></span><span class="doller_sign">$</span>
+                            <span class="icon-tip"><i class="fa fa-exclamation-triangle tooltip-contain">
+                            <span class="tooltiptext">Accept only positive and float number.</span></i></span>
+                        </div>
+                    </div>
+                    <div class="spacing">
+                        <div class="formlbl"><span><label class="stc_qty">Stock Quantity(Like sample 100)</label></span></div>
+                        <diV class="forminpt">
+                            <span><input class="txtbox_style stc_qty_txt" type="text" data-intype="num"/></span><span class="doller_sign">$</span>
+                            <span class="icon-tip"><i class="fa fa-exclamation-triangle tooltip-contain">
+                            <span class="tooltiptext">Accept only positive number.</span></i></span>
+                        </diV>
+                    </div>
+                    <div class="spacing">
+                        <div class="formlbl"><span><label class="stc_price_pos">Stock Upside watch(Like sample $+5)</label></span></div>
+                        <div class="forminpt">
+                            <span><input class="txtbox_style stc_pos" type="text" data-intype="num"/></span><span class="doller_sign">$</span>
+                            <span class="icon-tip"><i class="fa fa-exclamation-triangle tooltip-contain">
+                            <span class="tooltiptext">Accept only positive number.</span></i></span>
+                        </div>
+                    </div>
+                    <div class="spacing">
+                        <div class="formlbl"><span><label class="stc_price_neg">Stock Downside watch(Like sample $-5)</label></span></div>
+                        <div class="forminpt">
+                            <span><input class="txtbox_style stc_neg" type="text" data-intype="num"/></span><span class="doller_sign">$</span>
+                            <span class="icon-tip"><i class="fa fa-exclamation-triangle tooltip-contain">
+                            <span class="tooltiptext">Accept only positive number</span></i></span>
+                        </div>
+                    </div>
+                    <div class="spacing">
+                        <div><span><label class="stc_notify">Select Notification up/down or both</label></span></div>
+                    </div>
+
+                </div>
+                <div class="right_part" id="eachInput">
+                    <div class="">
+
+                    </div>
+                    <div class="">
+
+                    </div>
+                    <div class="">
+
+                    </div>
+                    <div class="">
+
+                    </div>
+                    <div class="">
+
+                    </div>
+                    <div>
+                        <!-- <span><input type="checkbox" value="up" class="updpwn" /><label class="up-down-lbl">Up</label></span>
+                        <span><input type="checkbox" value="down" class="updpwn" /><label class="up-down-lbl">Down</label></span> -->
+                    </div>
+                </div>
+
+            </div>
+            <div class="right_col">
+                <div class="btn_submit"><button type="button" value="" class="modal_btn_style" id="getStockVal">Add stock to portfolio</button></div>
+                <div class="btn_submit"><button type="button" value="" class="modal_btn_style" id="newStocks">Start my porfolio</button></div>
+                <div class="btn_close"><button type="button" value="" class="modal_btn_style" id="closedialog">Close</button></div>
+            </div>
+        </div>
+    </div>
+    <div id="usrKeyDialog">
+        <div id="header_usrkey">Please validate the secret key</div>
+        <div id="" class="usrkey_container">
+            <span id="iput_label">Your Secret Key :</span>
+            <span><input type="text" id="scrtkey"/></span>
+        </div>
+        <div class="btn_container">
+            <div><button id="get_sec_key">Find my data.</button></div>
+            <div ><button id="close_key_popup">Close</button></div>
+        </div>
+    </div>
+    <div id="newsignup_dialog">
+        <div>It's look like you are new user. Please click the folowing link to continue.</div>
+        <div><span>Choose your secret key:</span><span><input type="text" id="newuser_key"/></span></div>
+        <div>
+            <button id="continue_btn">Continue</button>
+        </div>
+    </div>
+
+    <!-- testing code
+    <input type="button" id="testing" value="Click me"/>
+    <br>
+    <input type="button" id="testing2" value="Click me"/>
+    -->
+    <!-- The Modal -->
+
+
+
+
+</body>
+</html>
