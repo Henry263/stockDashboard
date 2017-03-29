@@ -60,6 +60,13 @@ $(document).ready(function() {
         // set the chart title
         chart.title("Your portfolio breakdown");
 
+        var legend = chart.legend();
+        legend.position("top");
+        legend.align("left");
+        // making the legend vertical
+        legend.itemsLayout('vertical');
+        // setting the space between the items
+        legend.itemsSpacing(1);
         // set the container id
         chart.container("portfolioChart");
 
@@ -729,24 +736,7 @@ $(document).ready(function() {
                     //getNew_usr_key
                     firstTimeUsrData(stocktable, getNew_usr_key)
                 }
-                /*
-                 var _lckey_newData = localStorage.getObject("userUniqKey123");
-                 var keyFlag = checkUnqKey(_lckey_newData);
 
-                 if(keyFlag)
-                 {
-                 alert("Key is already present in JSON file.");
-                 //encodedUsrKey = "perso"; // For testing purpose this is static
-                 appendstockData(stocktable);
-                 console.log(stocktable);
-                 }
-                 else
-                 {
-                 $("#usrKeyDialog").dialog("open");
-                 dimOn();
-                 checkInJson(find_userkey_input);
-                 }
-                 */
                 var resetCount = 0;
                 //reset the api object again
                 //fetchApi_Object();
