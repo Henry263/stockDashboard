@@ -118,7 +118,7 @@ $("document").ready(function () {
         var default_counter = arryCounter;
         var loop_init_val = copyLocalStockArray[default_counter];
 
-        var historicDataurl = 'http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20%3D%20%22'+copyLocalStockArray[arryCounter]+'%22%20and%20startDate%20%3D%20%22'+year_before_d+'%22%20and%20endDate%20%3D%20%22'+current_d+'%22&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=';
+        var historicDataurl = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20%3D%20%22'+copyLocalStockArray[arryCounter]+'%22%20and%20startDate%20%3D%20%22'+year_before_d+'%22%20and%20endDate%20%3D%20%22'+current_d+'%22&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=';
         //var historicDataurl = 'http://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.historicaldata where symbol = '+copyLocalStockArray[arryCounter]+' and startDate = '+year_before_d+' and endDate = '+current_d+'&format=json&diagnostics=true&env=store://datatables.org/alltableswithkeys&callback=';
         $.ajax({
             //url: 'http://finance.google.com/finance/info?client=ig&q=nasdaq:MSFT',
