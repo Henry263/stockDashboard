@@ -1,6 +1,7 @@
 /**
  * Created by harshilkumar on 3/27/17.
  */
+/*         https://mystock-dashboard.herokuapp.com/        */
 $(document).ready(function() {
 
     //setTimeout(enable_chart_btn, 10000);
@@ -471,7 +472,8 @@ $(document).ready(function() {
             dataType: "json",
             data: '',
             contentType: "application/json; charset=utf-8",
-            url: 'http://localhost:3000/getUsrKey/'+encodedString,
+            //url: 'http://localhost:3000/getUsrKey/'+encodedString,
+            url: 'https://mystock-dashboard.herokuapp.com/'+encodedString,
             complete: function() {
                 //called when complete
                 console.log('process complete');
@@ -809,7 +811,8 @@ $(document).ready(function() {
         $.ajax({
             type: 'POST',
             contentType: "application/json; charset=utf-8",
-            url: 'http://localhost:3000/UpdateusrConfig',
+            url: 'https://mystock-dashboard.herokuapp.com/UpdateusrConfig',
+            //url: 'http://localhost:3000/UpdateusrConfig',
             data: data,
             dataType: "json",
             crossDomain: true,
@@ -850,7 +853,8 @@ $(document).ready(function() {
             $.ajax({
                 type: 'POST',
                 contentType: "application/json; charset=utf-8",
-                url: 'http://localhost:3000/appendusrConfig',
+                url: 'https://mystock-dashboard.herokuapp.com/appendusrConfig',
+                //url: 'http://localhost:3000/appendusrConfig',
                 data: data,
                 dataType: "json",
                 crossDomain: true,
