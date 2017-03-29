@@ -3,7 +3,7 @@
  */
 $(document).ready(function() {
 
-    setTimeout(enable_chart_btn, 10000);
+    //setTimeout(enable_chart_btn, 10000);
     Storage.prototype.setObject = function (key, value) {
         this.setItem(key, JSON.stringify(value));
     }
@@ -15,9 +15,7 @@ $(document).ready(function() {
     //localStorage.setObject("stockObject123", "");
     //localStorage.setObject("userUniqKey123", "");
 
-    function enable_chart_btn() {
-        $('i.ichar').css('display','inline-block');
-    }
+
     $('.stc_name_txt').bind('keyup', function (e) {
         if (e.which >= 97 && e.which <= 122) {
             var newKey = e.which - 32;
@@ -139,8 +137,8 @@ $(document).ready(function() {
         {
 
             // Load the pop up to ask user to provide the unique key to get the JSON data
-                $("#usrKeyDialog").dialog("open");
-                dimOn();
+            $("#usrKeyDialog").dialog("open");
+            dimOn();
 
             //_lc_stockdata = checkInJson(_keyName);
             //return _lc_stockdata;
@@ -168,6 +166,7 @@ $(document).ready(function() {
     var notifycounter = 0;
 
     function callAPI(apiStringVal, stocksObjectVal) {
+
         console.log("====== API Call ==========");
         console.log(apiStringVal);
         $(".eachstock").empty();
@@ -321,7 +320,7 @@ $(document).ready(function() {
                                     '<i class="fa fa-arrow-up" id="upar" aria-hidden="true"></i>' +
                                     '<i class="fa fa-arrow-down" id="downar" aria-hidden="true"></i><span>)</span></span><' +
                                     '/div><div class="expand_cls"><i class="fa fa-pencil-square-o editstc" aria-hidden="true"></i>' +
-                                    '<i class="fa fa-line-chart ichar" aria-hidden="true" style="display: none;"></i></div>' +
+                                    '<i class="fa fa-line-chart ichar" style="display: none;" aria-hidden="true"></i></div>' +
                                     '</div>' +
                                     '<div class="row2style"><div class="row2heading"> Investment Bid</div>' +
                                     '<div><table style="width:100%" id="stockTab"><tbody>' +
@@ -347,6 +346,13 @@ $(document).ready(function() {
 
 
                             }
+                            var check_chart_hoder = $('.each_chart_holder').length;
+                            console.log($('.each_chart_holder').length);
+                            if(check_chart_hoder > 0)
+                            {
+                                $('i.ichar').removeAttr("style");
+                                $('i.ichar').addClass("enable_show_chart_btn");
+                            }
                         });
 
                         //console.log("**********************************************************************************************")
@@ -355,7 +361,7 @@ $(document).ready(function() {
                         //console.log(last_change_percentage);
                     });
                     notifycounter++;
-                    enable_chart_btn();
+                    //enable_chart_btn();
                     getPortfolioChart(portfolio_chart_arry);
 
                     $(".eachstock").find(".perstock").each(function (){
@@ -382,9 +388,8 @@ $(document).ready(function() {
                 },
                 type: 'GET'
             });
+
         }
-
-
     }
     function notifyMe(stockPriceVal, stockicon) {
         var notify_html = "'<ol><li>html data</li></ol>';"
@@ -497,10 +502,10 @@ $(document).ready(function() {
             error: function() {
                 alert("It's look like you are new user please click on new user.");
                 /*
-                $("#newsignup_dialog").dialog("open");
-                dimOn();
-                console.log('process error');
-                */
+                 $("#newsignup_dialog").dialog("open");
+                 dimOn();
+                 console.log('process error');
+                 */
             },
         });
     }
@@ -510,8 +515,8 @@ $(document).ready(function() {
     $("#usrKeyDialog").dialog({autoOpen: false, modal: true});
     $("#newsignup_dialog").dialog({autoOpen: false, modal: true});
     $("#dialog").dialog({autoOpen: false, modal: true});
-     /*********** New user dialog ********/
-     var find_userkey_input;
+    /*********** New user dialog ********/
+    var find_userkey_input;
     $("body").on("click", "#get_sec_key", function () {
 
         var userkey_input = $('#scrtkey').val();
@@ -725,23 +730,23 @@ $(document).ready(function() {
                     firstTimeUsrData(stocktable, getNew_usr_key)
                 }
                 /*
-                var _lckey_newData = localStorage.getObject("userUniqKey123");
-                var keyFlag = checkUnqKey(_lckey_newData);
+                 var _lckey_newData = localStorage.getObject("userUniqKey123");
+                 var keyFlag = checkUnqKey(_lckey_newData);
 
-                if(keyFlag)
-                {
-                    alert("Key is already present in JSON file.");
-                    //encodedUsrKey = "perso"; // For testing purpose this is static
-                    appendstockData(stocktable);
-                    console.log(stocktable);
-                }
-                else
-                {
-                    $("#usrKeyDialog").dialog("open");
-                    dimOn();
-                    checkInJson(find_userkey_input);
-                }
-                */
+                 if(keyFlag)
+                 {
+                 alert("Key is already present in JSON file.");
+                 //encodedUsrKey = "perso"; // For testing purpose this is static
+                 appendstockData(stocktable);
+                 console.log(stocktable);
+                 }
+                 else
+                 {
+                 $("#usrKeyDialog").dialog("open");
+                 dimOn();
+                 checkInJson(find_userkey_input);
+                 }
+                 */
                 var resetCount = 0;
                 //reset the api object again
                 //fetchApi_Object();
@@ -891,5 +896,5 @@ $(document).ready(function() {
     }
     fetchApi_Object();
     calling_timer();
-     /******  Code end - add-append stock data ****************/
+    /******  Code end - add-append stock data ****************/
 });
