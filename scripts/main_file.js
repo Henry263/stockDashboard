@@ -181,7 +181,7 @@ $(document).ready(function() {
         if (apiStringVal) {
             $(".table_data_row").remove();
 
-            var testurl = 'http://finance.google.com/finance/info?client=ig&q=nasdaq:' + apiStringVal + '';
+            var testurl = 'https://finance.google.com/finance/info?client=ig&q=nasdaq:' + apiStringVal + '';
             $.ajax({
                 //url: 'http://finance.google.com/finance/info?client=ig&q=nasdaq:MSFT',
                 url: testurl,
