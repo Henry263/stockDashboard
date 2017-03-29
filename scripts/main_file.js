@@ -473,7 +473,7 @@ $(document).ready(function() {
             data: '',
             contentType: "application/json; charset=utf-8",
             //url: 'http://localhost:3000/getUsrKey/'+encodedString,
-            url: 'https://mystock-dashboard.herokuapp.com/'+encodedString,
+            url: 'https://mystock-dashboard.herokuapp.com/getUsrKey/'+encodedString,
             complete: function() {
                 //called when complete
                 console.log('process complete');
