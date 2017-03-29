@@ -144,8 +144,8 @@ $(document).ready(function() {
         {
 
             // Load the pop up to ask user to provide the unique key to get the JSON data
-            $("#usrKeyDialog").dialog("open");
-            dimOn();
+                $("#usrKeyDialog").dialog("open");
+                dimOn();
 
             //_lc_stockdata = checkInJson(_keyName);
             //return _lc_stockdata;
@@ -508,11 +508,15 @@ $(document).ready(function() {
             },
             error: function() {
                 alert("It's look like you are new user please click on new user.");
+                $('.portfolio_chart').empty();
+                $(".eachstock").empty();
+                $(".each_chart_holder").empty();
+
                 /*
-                 $("#newsignup_dialog").dialog("open");
-                 dimOn();
-                 console.log('process error');
-                 */
+                $("#newsignup_dialog").dialog("open");
+                dimOn();
+                console.log('process error');
+                */
             },
         });
     }
@@ -522,8 +526,8 @@ $(document).ready(function() {
     $("#usrKeyDialog").dialog({autoOpen: false, modal: true});
     $("#newsignup_dialog").dialog({autoOpen: false, modal: true});
     $("#dialog").dialog({autoOpen: false, modal: true});
-    /*********** New user dialog ********/
-    var find_userkey_input;
+     /*********** New user dialog ********/
+     var find_userkey_input;
     $("body").on("click", "#get_sec_key", function () {
 
         var userkey_input = $('#scrtkey').val();
@@ -886,5 +890,5 @@ $(document).ready(function() {
     }
     fetchApi_Object();
     calling_timer();
-    /******  Code end - add-append stock data ****************/
+     /******  Code end - add-append stock data ****************/
 });

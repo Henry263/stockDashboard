@@ -170,34 +170,34 @@ $("document").ready(function () {
             },type: 'GET'
         });
         /*
-         $.getJSON('http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20%3D%20%22'+st_symbol+'%22%20and%20startDate%20%3D%20%222017-03-10%22%20and%20endDate%20%3D%20%222017-03-18%22&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=', function(data) {
+        $.getJSON('http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20%3D%20%22'+st_symbol+'%22%20and%20startDate%20%3D%20%222017-03-10%22%20and%20endDate%20%3D%20%222017-03-18%22&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=', function(data) {
 
-         for(var i=0;i<data.query.results.quote.length;i++)
-         {
+            for(var i=0;i<data.query.results.quote.length;i++)
+            {
 
-         var arrid = " ";
-         var strDate = 0;
-         //arrid = generateid();
-         arrid = [];
+                var arrid = " ";
+                var strDate = 0;
+                //arrid = generateid();
+                arrid = [];
 
-         cahrtObject = {};
-         var strDate = data.query.results.quote[i]["Date"];
-         arrid.push(strDate);
+                cahrtObject = {};
+                var strDate = data.query.results.quote[i]["Date"];
+                arrid.push(strDate);
 
-         arrid.push(data.query.results.quote[i]["High"]);
-         arrid.push(data.query.results.quote[i]["Low"]);
-         arrid.push(data.query.results.quote[i]["Open"]);
-         arrid.push(data.query.results.quote[i]["Close"]);
+                arrid.push(data.query.results.quote[i]["High"]);
+                arrid.push(data.query.results.quote[i]["Low"]);
+                arrid.push(data.query.results.quote[i]["Open"]);
+                arrid.push(data.query.results.quote[i]["Close"]);
 
-         //console.log(arrid);
-         chartArray.push(arrid);
-         }
+                //console.log(arrid);
+                chartArray.push(arrid);
+            }
 
-         //console.log(chartArray);
-         //callChartFunc(chartArray);
-         detailChart(chartArray, st_symbol);
-         });
-         */
+            //console.log(chartArray);
+            //callChartFunc(chartArray);
+            detailChart(chartArray, st_symbol);
+        });
+        */
     }
 
     function generateid()
@@ -211,36 +211,36 @@ $("document").ready(function () {
         return text;
     }
     /*
-     function callChartFunc(stcArry) {
-     anychart.onDocumentReady(function () {
-     console.log(stcArry);
-     var stc_arry = stcArry;
-     var table = anychart.data.table(0);
+    function callChartFunc(stcArry) {
+        anychart.onDocumentReady(function () {
+            console.log(stcArry);
+            var stc_arry = stcArry;
+            var table = anychart.data.table(0);
 
-     table.addData(stc_arry);
+            table.addData(stc_arry);
 
-     // map loaded data
-     var mapping = table.mapAs({'open': 1, 'high': 2, 'low': 3, 'close': 4});
+            // map loaded data
+            var mapping = table.mapAs({'open': 1, 'high': 2, 'low': 3, 'close': 4});
 
-     // create stock chart
-     chart = anychart.stock();
+            // create stock chart
+            chart = anychart.stock();
 
-     // create first plot on the chart with column series
-     var firstPlot = chart.plot(0);
-     var series = firstPlot.ohlc(mapping);
-     series.name("ACME Corp. Stock Prices");
+            // create first plot on the chart with column series
+            var firstPlot = chart.plot(0);
+            var series = firstPlot.ohlc(mapping);
+            series.name("ACME Corp. Stock Prices");
 
-     var item = series.legendItem();
-     item.text('ACME Corp. Stock Prices');
+            var item = series.legendItem();
+            item.text('ACME Corp. Stock Prices');
 
-     // set container id for the chart
-     chart.container('container');
+            // set container id for the chart
+            chart.container('container');
 
-     // initiate chart drawing
-     chart.draw();
-     });
-     }
-     */
+            // initiate chart drawing
+            chart.draw();
+        });
+    }
+    */
 
     /*----------------------
      This is chart dialog
@@ -291,102 +291,114 @@ $("document").ready(function () {
     }
     function detailChart(stcArry, get_symbol) {
 
-        anychart.onDocumentReady(function() {
-            // set container id for the chart
-            $('div.eachstock').find('.perstock').each(function () {
-                var div_symbol_id = $(this).attr('id');
-                if (get_symbol == div_symbol_id) {
-                    var uniquesymbol = get_symbol + "_chart";
-                    var chart_id_symbol = "chart_dialog_" + get_symbol;
-                    //console.log("Inside draw chart function"+uniquesymbol);
-                    var char_container = '<div class="each_chart_holder" id="' + chart_id_symbol + '" style="display: none;"> ' +
-                        '<div class="close_btn_chart">' +
-                        '<i class="fa fa-times close_btn" aria-hidden="true"></i></div> ' +
-                        ' <div id="' + uniquesymbol + '" class="chart_contaner"></div> ' +
-                        ' </div> ';
+            anychart.onDocumentReady(function() {
+                // set container id for the chart
+                    $('div.eachstock').find('.perstock').each(function () {
+                    var div_symbol_id = $(this).attr('id');
+                    if (get_symbol == div_symbol_id) {
+                        var uniquesymbol = get_symbol + "_chart";
+                        var chart_id_symbol = "chart_dialog_" + get_symbol;
+                        //console.log("Inside draw chart function"+uniquesymbol);
+                        var char_container = '<div class="each_chart_holder" id="' + chart_id_symbol + '" style="display: none;"> ' +
+                            '<div class="close_btn_chart">' +
+                            '<i class="fa fa-times close_btn" aria-hidden="true"></i></div> ' +
+                            ' <div id="' + uniquesymbol + '" class="chart_contaner"></div> ' +
+                            ' </div> ';
 
-                    //console.log("Inside draw chart function"+char_container);
+                        //console.log("Inside draw chart function"+char_container);
 
-                    var stc_arry = stcArry;
-                    // create data table on loaded data
-                    var dataTable = anychart.data.table();
-                    dataTable.addData(stc_arry);
+                        var stc_arry = stcArry;
+                        // create data table on loaded data
+                        var dataTable = anychart.data.table();
+                        dataTable.addData(stc_arry);
 
-                    // map loaded data
-                    var line_1_mapping = dataTable.mapAs({'value': 3});
-                    var line_2_mapping = dataTable.mapAs({'value': 2});
-                    var line_3_mapping = dataTable.mapAs({'value': 4});
-                    var line_4_mapping = dataTable.mapAs({'value': 1});
+                        // map loaded data
+                        var line_1_mapping = dataTable.mapAs({'value': 3});
+                        var line_2_mapping = dataTable.mapAs({'value': 2});
+                        var line_3_mapping = dataTable.mapAs({'value': 4});
+                        var line_4_mapping = dataTable.mapAs({'value': 1});
 
-                    // create stock chart
-                    chart = anychart.stock();
+                        // create stock chart
+                        chart = anychart.stock();
 
-                    // create first plot on the chart with column series
-                    var firstPlot = chart.plot(0);
-                    var series_1 = firstPlot.line(line_1_mapping);
-                    var series_2 = firstPlot.line(line_2_mapping);
-                    var series_3 = firstPlot.line(line_3_mapping);
-                    var series_4 = firstPlot.line(line_4_mapping);
+                        // create first plot on the chart with column series
+                        var firstPlot = chart.plot(0);
+                        var series_1 = firstPlot.line(line_1_mapping);
+                        var series_2 = firstPlot.line(line_2_mapping);
+                        var series_3 = firstPlot.line(line_3_mapping);
+                        var series_4 = firstPlot.line(line_4_mapping);
 
-                    series_1.stroke("#558B2F");
-                    series_2.stroke("#D84315");
-                    series_3.stroke("#FF8F00");
-                    series_4.stroke("blue");
+                        series_1.stroke("#558B2F");
+                        series_2.stroke("#D84315");
+                        series_3.stroke("#FF8F00");
+                        series_4.stroke("blue");
 
-                    series_1.name("High");
-                    series_2.name("Low");
-                    series_3.name("Close");
-                    series_4.name("Open");
+                        series_1.name("High");
+                        series_2.name("Low");
+                        series_3.name("Close");
+                        series_4.name("Open");
 
-                    var legend = firstPlot.legend();
-                    // enables legend
-                    legend.enabled(true);
+                        var legend = firstPlot.legend();
+                        // enables legend
+                        legend.enabled(true);
 
-                    // turn the title on and set the position
-                    legend.title(true);
-                    legend.title().orientation('top').align('left');
-                    //legend.align('center');
+                        // turn the title on and set the position
+                        legend.title(true);
+                        legend.title().orientation('top').align('left');
+                        //legend.align('center');
 
-                    // format the title
-                    legend.titleFormatter(function () {
-                        return get_symbol;
-                    });
+                        // format the title
+                        legend.titleFormatter(function () {
+                            return get_symbol;
+                        });
 
-                    //enable the titleSeparator
-                    legend.titleSeparator(true);
-                    // set legend position and items layout
-                    firstPlot.legend().itemsLayout('horizontal');
-                    firstPlot.legend().position('top');
+                        //enable the titleSeparator
+                        legend.titleSeparator(true);
+                        // set legend position and items layout
+                        firstPlot.legend().itemsLayout('horizontal');
+                        firstPlot.legend().position('top');
 
-                    // setting the space between the items
-                    legend.itemsSpacing(10);
+                        // setting the space between the items
+                        legend.itemsSpacing(10);
 
-                    // enable the scroller
-                    chart.scroller().enabled(true);
+                        // enable the scroller
+                        chart.scroller().enabled(true);
 
-                    // adjust the scroller
-                    //chart.selectRange('2014-01-02','2014-02-03');
+                        // adjust the scroller
+                        //chart.selectRange('2014-01-02','2014-02-03');
 
-                    // set container id for the chart
-                    $(char_container).insertAfter($('div.eachstock'));
-                    chart.container(uniquesymbol);
+                        // set container id for the chart
+                        $(char_container).insertAfter($('div.eachstock'));
+                        chart.container(uniquesymbol);
 
-                    // adjust the scroller axis
-                    var labels = chart.scroller().xAxis().labels();
-                    var minorLabels = chart.scroller().xAxis().minorLabels();
-                    // create scroller series with mapped data
-                    chart.scroller().column(line_3_mapping);
+                        // adjust the scroller axis
+                        var labels = chart.scroller().xAxis().labels();
+                        var minorLabels = chart.scroller().xAxis().minorLabels();
+                        // create scroller series with mapped data
+                        chart.scroller().column(line_3_mapping);
 
-                    // initiate chart drawing
-                    chart.draw();
+                        // initiate chart drawing
+                        chart.draw();
 
-                }
+                    }
 
+                });
+                chartArray.length = 0;
+                gethistoricData();
             });
-            chartArray.length = 0;
-            gethistoricData();
-        });
 
     }
     //gethistoricData();
 });
+
+// $.getJSON("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22FB,AAPL%22)&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=", function(data) {
+// http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20%3D%20%22AAPL%22%20and%20startDate%20%3D%20%222017-03-10%22%20and%20endDate%20%3D%20%222017-03-18%22&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=
+
+// https://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.quotes where symbol in ("FB,AAPL")&format=json&diagnostics=true&env=store://datatables.org/alltableswithkeys&callback=
+// http://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.historicaldata where symbol = "AAPL,FB" and startDate = "2017-03-10" and endDate = "2017-03-18"&format=json&diagnostics=true&env=store://datatables.org/alltableswithkeys&callback=
+
+// http://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.quotes where symbol in ("AAPL")&format=json&diagnostics=true&env=store://datatables.org/alltableswithkeys
+
+// http://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.quotes where symbol in ("AAPL") and startDate = "2017-03-10" and endDate = "2017-03-18"&format=json&diagnostics=true&env=store://datatables.org/alltableswithkeys
+
+// http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20%3D%20%22AAPL%22%20and%20startDate%20%3D%20%222017-03-10%22%20and%20endDate%20%3D%20%222017-03-18%22&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=
