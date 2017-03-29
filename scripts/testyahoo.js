@@ -119,9 +119,8 @@ $("document").ready(function () {
         var loop_init_val = copyLocalStockArray[default_counter];
 
         var historicDataurl = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20%3D%20%22'+copyLocalStockArray[arryCounter]+'%22%20and%20startDate%20%3D%20%22'+year_before_d+'%22%20and%20endDate%20%3D%20%22'+current_d+'%22&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=';
-        //var historicDataurl = 'http://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.historicaldata where symbol = '+copyLocalStockArray[arryCounter]+' and startDate = '+year_before_d+' and endDate = '+current_d+'&format=json&diagnostics=true&env=store://datatables.org/alltableswithkeys&callback=';
+        //var historicDataurl = 'https://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.historicaldata where symbol = '+copyLocalStockArray[arryCounter]+' and startDate = '+year_before_d+' and endDate = '+current_d+'&format=json&diagnostics=true&env=store://datatables.org/alltableswithkeys&callback=';
         $.ajax({
-            //url: 'http://finance.google.com/finance/info?client=ig&q=nasdaq:MSFT',
             url: historicDataurl,
             data: {
                 format: 'json'
@@ -169,35 +168,7 @@ $("document").ready(function () {
 
             },type: 'GET'
         });
-        /*
-        $.getJSON('http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20%3D%20%22'+st_symbol+'%22%20and%20startDate%20%3D%20%222017-03-10%22%20and%20endDate%20%3D%20%222017-03-18%22&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=', function(data) {
 
-            for(var i=0;i<data.query.results.quote.length;i++)
-            {
-
-                var arrid = " ";
-                var strDate = 0;
-                //arrid = generateid();
-                arrid = [];
-
-                cahrtObject = {};
-                var strDate = data.query.results.quote[i]["Date"];
-                arrid.push(strDate);
-
-                arrid.push(data.query.results.quote[i]["High"]);
-                arrid.push(data.query.results.quote[i]["Low"]);
-                arrid.push(data.query.results.quote[i]["Open"]);
-                arrid.push(data.query.results.quote[i]["Close"]);
-
-                //console.log(arrid);
-                chartArray.push(arrid);
-            }
-
-            //console.log(chartArray);
-            //callChartFunc(chartArray);
-            detailChart(chartArray, st_symbol);
-        });
-        */
     }
 
     function generateid()
@@ -210,37 +181,7 @@ $("document").ready(function () {
 
         return text;
     }
-    /*
-    function callChartFunc(stcArry) {
-        anychart.onDocumentReady(function () {
-            console.log(stcArry);
-            var stc_arry = stcArry;
-            var table = anychart.data.table(0);
 
-            table.addData(stc_arry);
-
-            // map loaded data
-            var mapping = table.mapAs({'open': 1, 'high': 2, 'low': 3, 'close': 4});
-
-            // create stock chart
-            chart = anychart.stock();
-
-            // create first plot on the chart with column series
-            var firstPlot = chart.plot(0);
-            var series = firstPlot.ohlc(mapping);
-            series.name("ACME Corp. Stock Prices");
-
-            var item = series.legendItem();
-            item.text('ACME Corp. Stock Prices');
-
-            // set container id for the chart
-            chart.container('container');
-
-            // initiate chart drawing
-            chart.draw();
-        });
-    }
-    */
 
     /*----------------------
      This is chart dialog
@@ -390,15 +331,3 @@ $("document").ready(function () {
     }
     //gethistoricData();
 });
-
-// $.getJSON("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22FB,AAPL%22)&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=", function(data) {
-// http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20%3D%20%22AAPL%22%20and%20startDate%20%3D%20%222017-03-10%22%20and%20endDate%20%3D%20%222017-03-18%22&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=
-
-// https://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.quotes where symbol in ("FB,AAPL")&format=json&diagnostics=true&env=store://datatables.org/alltableswithkeys&callback=
-// http://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.historicaldata where symbol = "AAPL,FB" and startDate = "2017-03-10" and endDate = "2017-03-18"&format=json&diagnostics=true&env=store://datatables.org/alltableswithkeys&callback=
-
-// http://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.quotes where symbol in ("AAPL")&format=json&diagnostics=true&env=store://datatables.org/alltableswithkeys
-
-// http://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.quotes where symbol in ("AAPL") and startDate = "2017-03-10" and endDate = "2017-03-18"&format=json&diagnostics=true&env=store://datatables.org/alltableswithkeys
-
-// http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.historicaldata%20where%20symbol%20%3D%20%22AAPL%22%20and%20startDate%20%3D%20%222017-03-10%22%20and%20endDate%20%3D%20%222017-03-18%22&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=
