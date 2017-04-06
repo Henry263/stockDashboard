@@ -2,161 +2,406 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>StockDashboard</title>
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
     <script src="https://cdn.anychart.com/js/7.13.0/anychart-bundle.min.js"></script>
-    <script src="scripts/main_file.js"></script>
+    <script src="dist/modal.min.js"></script>
+    <script src="dist/index.min.js"></script>
+    <!--
     <script src="scripts/testyahoo.js"></script>
+    <script src="scripts/base.js"></script>
+    -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
     <link rel="stylesheet" href="https://cdn.anychart.com/css/7.13.0/anychart-ui.min.css" />
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/modal.css">
+
 </head>
 <body>
-    <div id="darkLayer" class="overlay" style="display:none"></div>
+<div id="darkLayer" class="overlay" style="display:none"></div>
+    <div class="main_container">
+        <div id="hemburger_menu" class="header">
 
-    <div>
-        <div class="portfolio_chart">
-            <div id="portfolioChart"></div>
+            <div class="mobile_logo"><img class="logo_image" src="images/stock_dsh.png"/></div>
+            <div class="menu-btn" type="checkbox" id="menu-btn">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+            <ul class="hem-menu" style="display: none">
+                <li><div id="get_key_m">Get data</div></li>
+                <li><div id="add_stc_m">Add Stock</div></li>
+                <li><div id="new_usr_m">New User</div></li>
+                <li><div id="start_manual_m">How to start</div></li>
+
+            </ul>
         </div>
-        <div class="add_btn">
-            <a href="#" id="open" class="addstk_btn btn_style">Click me to Add the stock to the portfolio</a>
-            <a href="#" id="newsignUp" class="newUser_btn btn_style">New User button</a>
+        <div class="main_menu">
+            <div class="stc_logo"><img class="logo_image" src="images/stock_dsh.png"/></div>
+            <div class="main_btns">
+                <div class="btn-design-mm" id="get_my_key" data-target="get_usr_keyModal" data-toggle="modal">
+                    <div id="get_my_key_text" data-target="get_usr_keyModal" data-toggle="modal">Get Data</div>
+                </div>
+                <div class="btn-design-mm" id="add_new_stock" data-toggle="modal" data-target="addNew_stock_modal">
+                    <div id="add_stc" data-toggle="modal" data-target="addNew_stock_modal">Add Stock</div>
+                </div>
+                <div class="btn-design-mm" id="sign_up_user" data-toggle="modal" data-target="new_signup">
+                    <div id="new_usr" data-toggle="modal" data-target="new_signup">New User</div>
+                </div>
+                <div class="btn-design-mm" id="switch_user" data-target="get_usr_keyModal" data-toggle="modal">
+                    <div id="swtch_usr" data-target="get_usr_keyModal" data-toggle="modal">Switch User</div>
+                </div>
+                <div class="btn-design-mm">
+                    <div id="start_manual">How to start?</div>
+                </div>
+            </div>
         </div>
-        <div class="add_btn">
 
+        <div class="get_usr_key">
+            <button data-target="get_usr_keyModal" data-toggle="modal" id="get_key_popup">Get the user key</button>
+            <button data-target="new_usr_keyModal" data-toggle="modal" id="newUser_key_popup">New user info</button>
+            <button data-target="new_feature_keyModal" data-toggle="modal" id="new_featuer_popup">New user info</button>
+            <button  id="stop_timer">Stop Timer button.</button>
         </div>
-    </div>
 
-    <div class="stock_table_data">
-        <table style="width:100%" id="stockTab">
-            <tr class="table_heading">
-                <th>Stock</th>
-                <th>Quantity</th>
-                <th>Total Investment</th>
-                <th>Buy Price</th>
-                <th>Current Price</th>
-                <th>Current Difference</th>
-                <th>Last Change ($)</th>
-                <th>Up(+)</th>
-                <th>Down(-)</th>
-                <th>Current Portfolio</th>
-            </tr>
-
-        </table>
-    </div>
-    <div class="eachstock">
-
-    </div>
-    <div id="dialog">
-        <div class="formcontainer">
-            <div class="left_col">
-                <div class="left_part">
-                    <div class="spacing">
-                        <div class="formlbl"><span><label class="stc_name">StockName(Like "FB" for facebook)</label></span></div>
-                        <div class="forminpt">
-                            <span><input class="txtbox_style stc_name_txt" type="text" data-intype="text"/></span>
-                            <span class="icon-tip"><i class="fa fa-exclamation-triangle tooltip-contain">
-                            <span class="tooltiptext">Accept only alphabets.</span></i></span>
+        <div class="row1">
+            <div class="mob_net_val">
+                <div class="networth_container">
+                    <div class="net_heading">Networth Value</div>
+                    <div class="networth">
+                        <div class="invested_net">
+                            <span class="invet_net_lbl">Invested</span>
+                            <span class="invet_net_val" id="invested_net_val_m"></span>
+                        </div>
+                        <div class="current_net">
+                            <span class="cur_net_lbl">Current</span>
+                            <span class="cur_net_val" id="current_net_val_m"></span>
+                        </div>
+                        <div class="difference_net" >
+                            <span class="differ_net_lbl">Net Difference </span>
+                            <span class="differ_net_val" id="differ_net_val_m"></span>
                         </div>
                     </div>
-                    <div class="spacing">
-                        <div class="formlbl"><span><label class="stc_price">Stock buying Price(Like sample 123.45)</label></span></div>
-                        <div class="forminpt">
-                            <span><input class="txtbox_style stc_price_txt" type="text" data-intype="num"/></span><span class="doller_sign">$</span>
-                            <span class="icon-tip"><i class="fa fa-exclamation-triangle tooltip-contain">
-                            <span class="tooltiptext">Accept only positive and float number.</span></i></span>
-                        </div>
-                    </div>
-                    <div class="spacing">
-                        <div class="formlbl"><span><label class="stc_qty">Stock Quantity(Like sample 100)</label></span></div>
-                        <diV class="forminpt">
-                            <span><input class="txtbox_style stc_qty_txt" type="text" data-intype="num"/></span><span class="doller_sign">$</span>
-                            <span class="icon-tip"><i class="fa fa-exclamation-triangle tooltip-contain">
-                            <span class="tooltiptext">Accept only positive number.</span></i></span>
-                        </diV>
-                    </div>
-                    <div class="spacing">
-                        <div class="formlbl"><span><label class="stc_price_pos">Stock Upside watch(Like sample $+5)</label></span></div>
-                        <div class="forminpt">
-                            <span><input class="txtbox_style stc_pos" type="text" data-intype="num"/></span><span class="doller_sign">$</span>
-                            <span class="icon-tip"><i class="fa fa-exclamation-triangle tooltip-contain">
-                            <span class="tooltiptext">Accept only positive number.</span></i></span>
-                        </div>
-                    </div>
-                    <div class="spacing">
-                        <div class="formlbl"><span><label class="stc_price_neg">Stock Downside watch(Like sample $-5)</label></span></div>
-                        <div class="forminpt">
-                            <span><input class="txtbox_style stc_neg" type="text" data-intype="num"/></span><span class="doller_sign">$</span>
-                            <span class="icon-tip"><i class="fa fa-exclamation-triangle tooltip-contain">
-                            <span class="tooltiptext">Accept only positive number</span></i></span>
-                        </div>
-                    </div>
-                    <div class="spacing">
-                        <div><span><label class="stc_notify">Select Notification up/down or both</label></span></div>
-                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row2">
+            <div class="left_div">
+                <div class="portfolio_chart" id="portfolioChart">
 
                 </div>
-                <div class="right_part" id="eachInput">
-                    <div class="">
-
+            </div>
+            <div class="right_div">
+                <div class="partisn0">
+                    <!--
+                    <div class="btn-design" id="add_new_stock" data-toggle="modal" data-target="addNew_stock_modal">
+                        <div id="add_stc">Add Stock</div>
                     </div>
-                    <div class="">
 
+                    <div class="btn-design" id="sign_up_user" data-toggle="modal" data-target="new_signup">
+                        <div id="new_usr" data-toggle="modal" data-target="new_signup">New User</div>
                     </div>
-                    <div class="">
+                    -->
+                </div>
 
+                <!--
+                <div class="partisn">
+                    <div class="btn-design"><div id="start_manual">How to start</div></div>
+                    <div class="btn-design"><div id="video_manual">Video Manual</div></div>
+                </div>
+                -->
+                <div class="networth_container">
+                    <div class="net_heading">Networth Value</div>
+                    <div class="networth">
+                        <div class="invested_net" id="desk_invest_net">
+                            <span class="invet_net_lbl">Invested</span>
+                            <span class="invet_net_val" id="invested_net_val"></span>
+                        </div>
+                        <div class="current_net" id="desk_current_net">
+                            <span class="cur_net_lbl">Current</span>
+                            <span class="cur_net_val" id="current_net_val"></span>
+                        </div>
+                        <div class="difference_net" id="differ_net">
+                            <span class="differ_net_lbl">Net Difference</span>
+                            <span class="differ_net_val" id="differ_net_val"></span>
+                        </div>
                     </div>
-                    <div class="">
+                </div>
+            </div>
 
-                    </div>
-                    <div class="">
+        </div>
+        <div class="summry_row">
+            <div class="show_hide">
+                <span class="icon_wrap"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                <span class="hidden_tab">Highlight of your Portfolio </span>
+            </div>
+            <div class="stock_table_data slidingDiv">
+                <table style="width:100%" id="stockTab">
+                    <tr class="table_heading">
+                        <th>Stock</th>
+                        <th>Qty</th>
+                        <th>Networth</th>
+                        <th>@invest</th>
+                        <th>Current($)</th>
+                        <th>Diff.($)</th>
+                        <th>Last Change($)</th>
+                        <th>Up(+)</th>
+                        <th>Down(-)</th>
+                        <th>Latest Net.</th>
+                    </tr>
 
-                    </div>
+                </table>
+            </div>
+        </div>
+        <div class="row3">
+
+
+
+            <!-- Asking secret key modal -->
+            <div id="get_usr_keyModal" class="modal">
+                <div class="modal-window">
+                    <span class="close" data-dismiss="modal">&times;</span>
                     <div>
-                        <!-- <span><input type="checkbox" value="up" class="updpwn" /><label class="up-down-lbl">Up</label></span>
-                        <span><input type="checkbox" value="down" class="updpwn" /><label class="up-down-lbl">Down</label></span> -->
+                        <h4>Give me your secret Key. I will fetch your portfolio.</h4>
+                        <div id="" class="usrkey_container">
+                            <span id="iput_label">Your Secret Key :</span>
+                            <span><input type="text" id="scrtkey"/></span>
+                        </div>
+                        <div class="btn_container">
+                            <div class="scrt_key_btn"><button id="get_sec_key" class="modal_btn common_btn_styles">Get Stocks</button></div>
+                        </div>
                     </div>
                 </div>
-
             </div>
-            <div class="right_col">
-                <div class="btn_submit"><button type="button" value="" class="modal_btn_style" id="getStockVal">Add stock to portfolio</button></div>
-                <div class="btn_submit"><button type="button" value="" class="modal_btn_style" id="newStocks">Start my porfolio</button></div>
-                <div class="btn_close"><button type="button" value="" class="modal_btn_style" id="closedialog">Close</button></div>
+
+            <!-- User secret not found modal -->
+            <div id="new_usr_keyModal" class="modal">
+                <div class="modal-window">
+                    <span class="close" data-dismiss="modal">&times;</span>
+                    <div>
+                        <h4>Informaiton: Key not found.</h4>
+                        <p>Secret is not found so please start as a new user.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User New feature coming -->
+            <div id="new_feature_keyModal" class="modal">
+                <div class="modal-window">
+                    <span class="close" data-dismiss="modal">&times;</span>
+                    <div>
+                        <h4>Under construction</h4>
+                        <p>This feature is under construction.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New User Modal -->
+            <div id="new_signup" class="modal">
+                <div class="modal-window sign_up_modal">
+                    <span class="close" data-dismiss="modal">&times;</span>
+                    <div>
+                        <div class="formcontainer signup">
+                            <div class="add_stock_header signup_header">Sign Up</div>
+                            <div class="left_col">
+                                <div class="form_fields_holder" id="newUsrFields">
+                                    <div class="spacing">
+                                        <div class="formlbl_signup"><span><label class="f_name">First Name</label></span></div>
+                                        <div class="forminpt">
+                                            <span><input class="txtbox_style fname" type="text" data-intype="text"/></span>
+                                            <span class="icon-tip init_disable"><i class="fa fa-exclamation-triangle tooltip-contain">
+                                            <span class="tooltiptext">Accept only alphabets.</span></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="spacing">
+                                        <div class="formlbl_signup"><span><label class="l_name">Last Name</label></span></div>
+                                        <div class="forminpt">
+                                            <span><input class="txtbox_style lname" type="text" data-intype="text"/></span><span class="doller_sign">$</span>
+                                            <span class="icon-tip init_disable"><i class="fa fa-exclamation-triangle tooltip-contain">
+                                        <span class="tooltiptext">Accept only alphabets.</span></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="spacing">
+                                        <div class="formlbl_signup"><span><label class="tel_num">Phone</label></span></div>
+                                        <diV class="forminpt">
+                                            <span><input class="txtbox_style tel" type="tel" data-intype="num" maxlength="10"/></span><span class="doller_sign">$</span>
+                                            <span class="icon-tip init_disable"><i class="fa fa-exclamation-triangle tooltip-contain">
+                                        <span class="tooltiptext">Only positive 10 number.</span></i></span>
+                                        </diV>
+                                    </div>
+                                    <div class="spacing">
+                                        <div class="formlbl_signup"><span><label class="mail">Email</label></span></div>
+                                        <div class="forminpt">
+                                            <span><input class="txtbox_style email" type="email" data-intype="mail"/></span><span class="doller_sign">$</span>
+                                            <span class="icon-tip init_disable"><i class="fa fa-exclamation-triangle tooltip-contain">
+                                        <span class="tooltiptext">Accept only valid email address</span></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="spacing">
+                                        <div class="formlbl_signup"><span><label class="skey">Secret Key</label></span></div>
+                                        <div class="forminpt">
+                                            <span><input class="txtbox_style s_key" type="text" data-intype="text"/></span><span class="doller_sign">$</span>
+                                            <span class="icon-tip init_disable"><i class="fa fa-exclamation-triangle tooltip-contain">
+                                        <span class="tooltiptext">Alpha/Numeric without special character.</span></i></span>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="right_col">
+                                <div class="btn_submit"><button type="button" value="" class="modal_btn_style common_btn_styles" id="newportfolio">Start my porfolio</button></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New stock modal-->
+            <div id="addNew_stock_modal" class="modal">
+
+                <div class="modal-window new_stock_modal">
+                    <span class="close" data-dismiss="modal">&times;</span>
+                    <div>
+
+                    </div>
+                    <div class="formcontainer">
+                        <div class="add_stock_header">Add Stock</div>
+                        <div class="left_col">
+                            <div class="form_fields_holder" id="newStockFields">
+                                <div class="spacing">
+                                    <div class="formlbl"><span><label class="stc_name">StockName(Like "FB" for facebook)</label></span></div>
+                                    <div class="forminpt">
+                                        <span><input class="txtbox_style stc_name_txt" type="text" data-intype="text"/></span>
+                                        <span class="icon-tip init_disable"><i class="fa fa-exclamation-triangle tooltip-contain">
+                                        <span class="tooltiptext">Accept only alphabets.</span></i></span>
+                                    </div>
+                                </div>
+                                <div class="spacing">
+                                    <div class="formlbl"><span><label class="stc_price">Stock buying Price(Like sample 123.45)</label></span></div>
+                                    <div class="forminpt">
+                                        <span><input class="txtbox_style stc_price_txt" type="text" data-intype="num"/></span><span class="doller_sign">$</span>
+                                        <span class="icon-tip init_disable"><i class="fa fa-exclamation-triangle tooltip-contain">
+                                        <span class="tooltiptext">Accept only positive and float number.</span></i></span>
+                                    </div>
+                                </div>
+                                <div class="spacing">
+                                    <div class="formlbl"><span><label class="stc_qty">Stock Quantity(Like sample 100)</label></span></div>
+                                    <diV class="forminpt">
+                                        <span><input class="txtbox_style stc_qty_txt" type="text" data-intype="num"/></span><span class="doller_sign">$</span>
+                                        <span class="icon-tip init_disable"><i class="fa fa-exclamation-triangle tooltip-contain">
+                                        <span class="tooltiptext">Accept only positive number.</span></i></span>
+                                    </diV>
+                                </div>
+                                <div class="spacing">
+                                    <div class="formlbl"><span><label class="stc_price_pos">Stock Upside watch(Like sample $+5)</label></span></div>
+                                    <div class="forminpt">
+                                        <span><input class="txtbox_style stc_pos" type="text" data-intype="num"/></span><span class="doller_sign">$</span>
+                                        <span class="icon-tip init_disable"><i class="fa fa-exclamation-triangle tooltip-contain">
+                                        <span class="tooltiptext">Accept only positive number.</span></i></span>
+                                    </div>
+                                </div>
+                                <div class="spacing">
+                                    <div class="formlbl"><span><label class="stc_price_neg">Stock Downside watch(Like sample $-5)</label></span></div>
+                                    <div class="forminpt">
+                                        <span><input class="txtbox_style stc_neg" type="text" data-intype="num"/></span><span class="doller_sign">$</span>
+                                        <span class="icon-tip init_disable"><i class="fa fa-exclamation-triangle tooltip-contain">
+                                        <span class="tooltiptext">Accept only positive number</span></i></span>
+                                    </div>
+                                </div>
+                                <div class="spacing">
+                                    <div><span><label class="stc_notify">Select Notification up/down or both</label></span></div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="right_col">
+                            <div class="btn_submit"><button type="button" value="" class="modal_btn_style common_btn_styles" id="getStockVal">Add stock to portfolio</button>
+                                <button type="button" value="" class="modal_btn_style common_btn_styles" id="updateStockVal">Update stock details</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="stc_panel_container">
+                <!--
+                <div class="st_panel">
+                    <div class="stc_name pnl-row1" id="stc_lbl">MSFT</div>
+                    <div class="pnl-row1-space">(</div>
+                    <div class="real_time_change pnl-row1">
+                        <span class="chng_icon_up"><i class="fa fa-caret-up up-doen-resize" aria-hidden="true"></i></span>
+                        <span class="chng_icon_down"><i class="fa fa-caret-down up-doen-resize" aria-hidden="true"></i></span>
+                        <span class="change_dlr_sign"><i class="fa fa-usd icon_size" aria-hidden="true"></i>
+                        </span><span class="change_dlr" id="stc_change_dlr">34.56</span>
+
+                    </div>
+                    <div class="pnl-row1-space">,</div>
+                    <div class="real_time_change pnl-row1">
+                        <span class="chng_icon_up"><i class="fa fa-caret-up up-doen-resize" aria-hidden="true"></i></span>
+                        <span class="chng_icon_down"><i class="fa fa-caret-down up-doen-resize" aria-hidden="true"></i></span>
+                        <span class="change_prcnt_sign"><i class="fa fa-percent icon_size" aria-hidden="true"></i></span>
+                        <span class="change_prcnt" id="stc_change_prcnt">3.4</span>
+
+                    </div>
+                    <div class="pnl-row1-space">)</div>
+                    <div class="curnt_net_val pnl-row2">
+                        <div class="net_label">Current Portfolio Value($) <i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+                        <div class="net_val" id="stc_net_val">34.89</div>
+                    </div>
+                    <div class="pnl-row3">
+                        <div class="left_por">
+                            <div class="qty_lbl">Volume</div>
+                            <div class="qty val_spacing" id="stc_qty">50</div>
+                        </div>
+                        <div class="right_por">
+                            <div class="net_diff_lbl">Difference($)</div>
+                            <div class="val_spacing" id="stc_dffrnt">6</div>
+                        </div>
+                    </div>
+                    <div class="pnl-row4">
+                        <div class="left_part">
+                            <div class="_lbl_enty all_lbls head_lbl_enty">Entity</div>
+                            <div class="invest_prce_lbl all_lbls head_lbl_invest">Invedted@($)</div>
+                            <div class="curnt_prce_lbl_head all_lbls head_lbl_current">Current@($)</div>
+                        </div>
+                        <div class="right_part">
+                            <div class="chld_row1">
+                                <div class="curnt_prce_lbl all_lbls">
+                                    <div class=" ">Price</div>
+                                </div>
+                                <div class="val_container">
+                                    <div class="invest_prce all_lbls val-width" id="stc_invest_lbl">34.89</div>
+                                    <div class="curernt_prce all_lbls val-width" id="stc_currnt_lbl">64.89</div>
+                                </div>
+
+                            </div>
+                            <div class="chld_row2">
+                                <div class="all_lbls diff">
+                                    <div class=" ">Total($)</div>
+                                </div>
+                                <div class="total_val_container">
+                                    <div class="invest_val all_lbls val-width" id="stc_invest_val">234.89</div>
+                                    <div class="curernt_val all_lbls val-width" id="stc_current_val">864.89</div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                -->
             </div>
         </div>
-    </div>
-    <div id="usrKeyDialog">
-        <div id="header_usrkey">Please validate the secret key</div>
-        <div id="" class="usrkey_container">
-            <span id="iput_label">Your Secret Key :</span>
-            <span><input type="text" id="scrtkey"/></span>
-        </div>
-        <div class="btn_container">
-            <div><button id="get_sec_key">Find my data.</button></div>
-            <div ><button id="close_key_popup">Close</button></div>
+        <div class="row5" id="detailed_chart">
+            <div class="eachstock"></div>
         </div>
     </div>
-    <div id="newsignup_dialog">
-        <div>It's look like you are new user. Please click the folowing link to continue.</div>
-        <div><span>Choose your secret key:</span><span><input type="text" id="newuser_key"/></span></div>
-        <div>
-            <button id="continue_btn">Continue</button>
-        </div>
-    </div>
-
-    <!-- testing code
-    <input type="button" id="testing" value="Click me"/>
-    <br>
-    <input type="button" id="testing2" value="Click me"/>
-    -->
-    <!-- The Modal -->
-
-
-
-
 </body>
 </html>

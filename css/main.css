@@ -1,0 +1,1286 @@
+body {
+  font-family: "Lucida Grande" , "Arial", "sans-serif";
+}
+
+/*------------ This is tablet  ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+  /* Styles */
+}
+/*------------ This is tablet - Landscape  ----------- */
+@media only screen and (min-device-width: 1024px) {
+  /* Styles */
+}
+span.anychart-credits-text, img.anychart-credits-logo {
+  display: none;
+}
+
+.none-display-class {
+  display: none !important;
+}
+
+table {
+  border: 1px solid #9c9797;
+  border-radius: 5px;
+}
+
+th {
+  border-bottom: 1px solid #9c9797;
+  padding: 5px;
+  font-size: 0.85rem;
+  font-weight: 100;
+}
+
+.left_div {
+  display: inline-block;
+  width: 38%;
+  vertical-align: top;
+}
+.left_div div#portfolioChart {
+  width: 100%;
+  height: 425px;
+}
+
+.btn-design:hover {
+  background-color: #442525;
+  border: 5px solid #98632b;
+}
+
+tr td:last-child {
+  border-right: none;
+}
+
+th:last-child {
+  border-right: none;
+}
+
+th {
+  border-right: 1px solid;
+  vertical-align: top;
+}
+
+td {
+  font-size: 0.7rem;
+  text-align: center;
+  border-right: 1px solid;
+}
+
+.show_hide {
+  border: 2px solid #6a6ad8;
+  padding: 10px 10px 10px 0px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: rgba(20, 74, 158, 0.91);
+  color: white;
+  cursor: pointer;
+}
+
+span.icon_wrap {
+  padding: 5px;
+  border: 2px solid #1a4573;
+  margin: 2px;
+  border-radius: 100%;
+  background: #4b87f5;
+}
+
+/***** Panel style ******/
+.st_panel {
+  border: 2px solid maroon;
+  border-radius: 10px;
+  padding: 10px;
+  display: inline-block;
+  width: 22%;
+  margin: 5px;
+}
+
+.stc_name.pnl-row1 {
+  font-size: 1rem;
+  display: inline-block;
+  font-weight: 700;
+  color: #10528a;
+  margin-right: 5px;
+}
+
+.real_time_change.pnl-row1 {
+  display: inline-block;
+  font-size: 15px;
+}
+
+.net_val {
+  display: inline-block;
+  font-size: 15px;
+}
+
+.net_label {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.right_por {
+  display: inline-block;
+  text-align: center;
+  width: 40%;
+  border: 1px solid blue;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.left_por {
+  display: inline-block;
+  text-align: center;
+  width: 40%;
+  border: 1px solid blue;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.all_lbls {
+  display: inline-block;
+}
+
+.net_diff_lbl, .qty_lbl {
+  border-bottom: 1px solid #827b7b;
+}
+
+.left_part {
+  border-bottom: 1px solid #827b7b;
+  /* margin-left: 0px; */
+  border-bottom: 1px solid #827b7b;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.curnt_prce_lbl, .diff {
+  text-align: right;
+  width: 18%;
+}
+
+.val_container {
+  display: inline-block;
+  width: 80%;
+}
+
+.total_val_container {
+  display: inline-block;
+  width: 80%;
+}
+
+.chld_row2, .chld_row1 {
+  margin: 5px 0px;
+}
+
+.right_part {
+  margin: 10px 0px;
+}
+
+.val-width {
+  width: 49%;
+  text-align: center;
+}
+
+.head_lbl_enty {
+  width: 18%;
+}
+
+.head_lbl_invest {
+  width: 45%;
+}
+
+.head_lbl_current {
+  width: 32%;
+}
+
+.pnl-row3 {
+  width: 100%;
+  margin: 10px 0px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.val_spacing {
+  padding: 5px 0px;
+}
+
+.pnl-row4 {
+  border-top: 1px solid #827b7b;
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+.pnl-row2 {
+  display: block;
+  width: 100%;
+  margin: 15px 0px;
+}
+
+.pnl-row1-space {
+  display: inline-block;
+}
+
+.icon_size {
+  font-size: 14px;
+}
+
+.up-doen-resize {
+  font-size: 20px;
+}
+
+span.change_prcnt_sign {
+  padding-left: 4px;
+}
+
+.btn-design:hover {
+  background-color: #442525;
+  border: 5px solid #98632b;
+}
+
+.panel_buttons {
+  margin-bottom: 10px;
+  display: block;
+  text-align: right;
+  color: #153082;
+}
+
+.front_icons {
+  padding-right: 10px;
+  padding-left: 5px;
+}
+
+.chart_groups {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.chart_groups:hover {
+  color: #561900;
+}
+
+div.chart_contaner {
+  height: 500px;
+}
+
+div.chart_contaner {
+  height: 500px !important;
+}
+
+.close_btn_chart {
+  position: absolute;
+  z-index: 1;
+  right: 10px;
+  padding: 20px;
+}
+
+div.each_chart_holder {
+  position: absolute;
+  top: 450px;
+  width: 100%;
+}
+
+.close_btn_chart {
+  cursor: pointer;
+}
+
+input#iput_vol {
+  width: 50px;
+  margin-top: 5px;
+}
+
+input#iput_prce {
+  width: 70px;
+  margin-left: 25px;
+}
+
+.edit_disable {
+  display: none;
+}
+
+.edit_enable {
+  display: block;
+}
+
+.forminpt {
+  display: inline-block;
+}
+
+.formlbl {
+  display: inline-block;
+  width: 325px;
+  text-align: right;
+  vertical-align: top;
+}
+
+.new_stock_modal {
+  width: 55% !important;
+}
+
+.spacing {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.tooltip-contain {
+  color: #a20d0d;
+}
+.tooltip-contain .tooltiptext {
+  font-family: "Lucida Grande" , "Arial", "sans-serif", "14px/1 FontAwesome";
+}
+
+.txtbox_style {
+  border: 1px solid gray;
+  background-color: #fff4e5;
+}
+
+span.icon-tip {
+  display: block;
+}
+
+.formcontainer {
+  margin-top: 20px;
+}
+
+.add_stock_header {
+  display: block;
+  text-align: center;
+  border: 2px solid #474556;
+  background-color: white;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  padding: 10px 0px;
+  color: #05052f;
+}
+
+.form_fields_holder {
+  margin-top: 10px;
+}
+
+.btn_submit {
+  display: inline-block;
+}
+
+.right_col {
+  text-align: center;
+  margin: 20px 0px;
+}
+
+.init_disable {
+  display: none !important;
+}
+
+.errborderclass {
+  border: 1px solid red;
+}
+
+.formlbl_signup {
+  width: 150px;
+  display: inline-block;
+  text-align: right;
+  margin-right: 10px;
+  vertical-align: top;
+}
+
+.sign_up_modal {
+  width: 42% !important;
+}
+
+.get_usr_key {
+  visibility: hidden;
+}
+
+.common_btn_styles {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: #05052f;
+  color: white;
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+
+.scrt_key_btn {
+  text-align: center;
+}
+
+span.cur_net_lbl, span.cur_net_val, span.differ_net_lbl {
+  display: block;
+}
+
+span.invet_net_lbl {
+  display: block;
+}
+
+span#invested_net_val_m {
+  display: block;
+}
+
+.invested_net, .current_net, .difference_net {
+  text-align: center;
+}
+
+#desk_invest_net, #desk_current_net, #differ_net {
+  width: 32%;
+  display: inline-block;
+}
+
+span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
+  color: #000b69;
+  margin-bottom: 10px;
+}
+
+/*------------ This is mobile  ----------- */
+@media only screen and (min-width: 320px) and (max-width: 413px) {
+  .mobile_logo {
+    width: 65%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  div#menu-btn {
+    width: 25%;
+  }
+
+  .st_panel {
+    max-width: 215px !important;
+  }
+
+  .stc_panel_container {
+    max-width: 245px !important;
+  }
+
+  .pnl-row3 {
+    display: none;
+  }
+
+  .mob_net_val {
+    display: block;
+  }
+
+  .networth_container {
+    display: block;
+    margin-top: 20px;
+    border: 2px solid maroon;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .net_heading {
+    text-align: center;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #908d8d;
+    color: #10528a;
+  }
+
+  .invested_net {
+    margin-bottom: 0px;
+  }
+
+  .invested_net, .current_net {
+    display: inline-block;
+    width: 49%;
+  }
+}
+@media only screen and (min-width: 414px) and (max-width: 768px) {
+  .mobile_logo {
+    width: 40%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  div#menu-btn {
+    width: 50%;
+  }
+
+  .st_panel {
+    max-width: 310px !important;
+  }
+}
+@media only screen and (min-width: 414px) and (max-width: 598px) {
+  .stc_panel_container {
+    max-width: 350px !important;
+  }
+
+  .mob_net_val {
+    display: block;
+  }
+
+  .networth_container {
+    display: block;
+    margin-top: 20px;
+    border: 2px solid maroon;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .net_heading {
+    text-align: center;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #908d8d;
+    color: #10528a;
+  }
+
+  .invested_net {
+    margin-bottom: 0px;
+    width: 32%;
+    display: inline-block;
+  }
+
+  .current_net {
+    width: 32%;
+    display: inline-block;
+  }
+
+  .difference_net {
+    width: 32%;
+    display: inline-block;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 599px) {
+  .difference_net {
+    margin-top: 10px;
+  }
+
+  .formlbl {
+    display: block;
+    width: 100%;
+    text-align: center;
+    vertical-align: top;
+  }
+
+  .form_fields_holder {
+    font-size: 0.8rem;
+  }
+
+  .spacing {
+    text-align: center;
+  }
+
+  .formlbl_signup {
+    text-align: center;
+  }
+
+  /*------ Hemburger Menu click ------------------*/
+  div#menu-btn {
+    text-align: right;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+    display: inline-block;
+  }
+
+  div#hemburger_menu {
+    background-color: #05052f;
+    color: white;
+  }
+
+  span.hem_menu_text {
+    font-size: 1.2rem;
+    vertical-align: top;
+    border-bottom: 1px solid #5d5df3;
+    margin-right: 10px;
+  }
+
+  ul.hem-menu li {
+    list-style: none;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 0px 20px;
+  }
+
+  ul.hem-menu {
+    background-color: rgba(202, 163, 255, 0.38);
+    color: white;
+    padding: 20px 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  ul.hem-menu li:hover {
+    background-color: white;
+    color: #000552;
+  }
+
+  /*----------------------------------------------*/
+  .stc_logo {
+    display: inline-block;
+    width: 30%;
+    vertical-align: middle;
+  }
+
+  .main_btns {
+    display: inline-block;
+    width: 64%;
+    color: white;
+    margin-left: 4%;
+    text-align: right;
+  }
+
+  img.logo_image {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 5px;
+  }
+
+  .main_menu {
+    background-color: #05052f;
+    display: none;
+  }
+
+  div.btn-design-mm {
+    display: inline-block;
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  div.btn-design-mm:hover {
+    background-color: white;
+    color: #05052f;
+  }
+
+  .right_div {
+    display: none;
+  }
+
+  .left_div {
+    display: block;
+    width: 100%;
+  }
+
+  .show_hide {
+    display: none;
+  }
+
+  .stc_panel_container {
+    display: block;
+    margin: 0 auto;
+    max-width: 425px;
+  }
+
+  .st_panel {
+    width: 100%;
+    display: block;
+    max-width: 400px;
+  }
+
+  .panel_buttons {
+    font-size: 0.8rem;
+  }
+
+  .curnt_net_val {
+    font-size: 0.8rem;
+  }
+
+  .net_val {
+    font-size: 0.8rem;
+  }
+
+  .pnl-row3 {
+    font-size: 0.8rem;
+  }
+
+  .pnl-row4 {
+    font-size: 0.8rem;
+  }
+
+  .real_time_change.pnl-row1 {
+    font-size: 0.8rem;
+  }
+
+  .stc_name.pnl-row1 {
+    font-size: 0.8rem;
+  }
+
+  button.modal_btn_style {
+    padding: 10px 24px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .formlbl {
+    display: block;
+    width: 100%;
+    text-align: center;
+    vertical-align: top;
+  }
+
+  .form_fields_holder {
+    font-size: 0.8rem;
+  }
+
+  .spacing {
+    text-align: center;
+  }
+
+  .formlbl_signup {
+    text-align: center;
+  }
+
+  /*------ Hemburger Menu click ------------------*/
+  div#menu-btn {
+    text-align: right;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+    display: inline-block;
+  }
+
+  div#hemburger_menu {
+    background-color: #05052f;
+    color: white;
+  }
+
+  span.hem_menu_text {
+    font-size: 1.2rem;
+    vertical-align: top;
+    border-bottom: 1px solid #5d5df3;
+    margin-right: 10px;
+  }
+
+  ul.hem-menu li {
+    list-style: none;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 0px 20px;
+  }
+
+  ul.hem-menu {
+    background-color: rgba(202, 163, 255, 0.38);
+    color: white;
+    padding: 20px 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  ul.hem-menu li:hover {
+    background-color: white;
+    color: #000552;
+  }
+
+  /*----------------------------------------------*/
+  .stc_logo {
+    display: inline-block;
+    width: 30%;
+    vertical-align: middle;
+  }
+
+  .main_btns {
+    display: inline-block;
+    width: 64%;
+    color: white;
+    margin-left: 4%;
+    text-align: right;
+  }
+
+  img.logo_image {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 5px;
+  }
+
+  .main_menu {
+    background-color: #05052f;
+    display: none;
+  }
+
+  div.btn-design-mm {
+    display: inline-block;
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  div.btn-design-mm:hover {
+    background-color: white;
+    color: #05052f;
+  }
+
+  .mob_net_val {
+    display: block;
+  }
+
+  .networth_container {
+    display: block;
+    margin-top: 20px;
+    border: 2px solid maroon;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .net_heading {
+    text-align: center;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #908d8d;
+    color: #10528a;
+  }
+
+  .invested_net {
+    margin-bottom: 0px;
+    width: 32%;
+    display: inline-block;
+  }
+
+  .current_net {
+    width: 32%;
+    display: inline-block;
+  }
+
+  .difference_net {
+    width: 32%;
+    display: inline-block;
+  }
+
+  .right_div {
+    display: none;
+  }
+
+  .left_div {
+    display: block;
+    width: 100%;
+  }
+
+  .show_hide {
+    display: none;
+  }
+
+  .st_panel {
+    width: 44%;
+  }
+
+  .panel_buttons {
+    font-size: 0.8rem;
+  }
+
+  .curnt_net_val {
+    font-size: 0.8rem;
+  }
+
+  .net_val {
+    font-size: 0.8rem;
+  }
+
+  .pnl-row3 {
+    font-size: 0.8rem;
+  }
+
+  .pnl-row4 {
+    font-size: 0.8rem;
+  }
+
+  .real_time_change.pnl-row1 {
+    font-size: 0.8rem;
+  }
+
+  .stc_name.pnl-row1 {
+    font-size: 0.8rem;
+  }
+
+  .stc_panel_container {
+    text-align: center;
+  }
+}
+/*------------ This is tablet  ----------- */
+@media only screen and (min-width: 769px) and (max-width: 1023px) {
+  .tooltip-contain {
+    position: absolute;
+    left: 160px;
+    margin-top: 2px;
+    font-size: 0.8rem;
+  }
+
+  .signup .tooltip-contain {
+    left: 130px;
+  }
+
+  .spacing {
+    text-align: left;
+    margin-bottom: 15px;
+  }
+
+  .formlbl {
+    width: 250px;
+    font-size: 0.8rem;
+  }
+
+  .txtbox_style {
+    width: 80px;
+  }
+
+  .btn_submit {
+    margin-top: 15px;
+  }
+
+  #hemburger_menu {
+    display: none;
+  }
+
+  .right_div {
+    display: inline-block;
+    width: 60%;
+  }
+
+  /* Styles */
+  .show_hide {
+    display: block;
+  }
+
+  .st_panel {
+    width: 45%;
+  }
+
+  .mob_net_val {
+    display: none;
+  }
+
+  .networth_container {
+    display: block;
+    margin-top: 20px;
+    border: 2px solid maroon;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .net_heading {
+    text-align: center;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #908d8d;
+    color: #10528a;
+  }
+
+  .invested_net {
+    margin-bottom: 10px;
+  }
+
+  .panel_buttons {
+    text-align: center;
+  }
+
+  .row2 .right_div .partisn {
+    max-width: 256px;
+    margin: 0 auto;
+    display: block;
+  }
+  .row2 .right_div .partisn0 {
+    max-width: 256px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .stc_panel_container {
+    text-align: center;
+  }
+
+  .stc_logo {
+    display: inline-block;
+    width: 30%;
+    vertical-align: middle;
+  }
+
+  .main_btns {
+    display: inline-block;
+    width: 64%;
+    color: white;
+    margin-left: 4%;
+    text-align: right;
+  }
+
+  img.logo_image {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 5px;
+  }
+
+  .main_menu {
+    background-color: #05052f;
+    display: block;
+  }
+
+  div.btn-design-mm {
+    display: inline-block;
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  div.btn-design-mm:hover {
+    background-color: white;
+    color: #05052f;
+  }
+}
+/*------------ This is medium desktop ----------- */
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+  /* Styles */
+  #hemburger_menu {
+    display: none;
+  }
+
+  .right_div {
+    display: inline-block;
+    width: 60%;
+  }
+
+  .show_hide {
+    display: block;
+  }
+
+  .st_panel {
+    width: 28%;
+    margin: 5px;
+  }
+
+  .stc_panel_container {
+    text-align: center;
+  }
+
+  .mob_net_val {
+    display: none;
+  }
+
+  .networth_container {
+    display: block;
+    margin-top: 20px;
+    border: 2px solid maroon;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .net_heading {
+    text-align: center;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #908d8d;
+    color: #10528a;
+  }
+
+  .invested_net {
+    margin-bottom: 10px;
+  }
+
+  .stc_logo {
+    display: inline-block;
+    width: 30%;
+    vertical-align: middle;
+  }
+
+  .main_btns {
+    display: inline-block;
+    width: 64%;
+    color: white;
+    margin-left: 4%;
+    text-align: right;
+  }
+
+  img.logo_image {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 5px;
+  }
+
+  .main_menu {
+    background-color: #05052f;
+    display: block;
+  }
+
+  div.btn-design-mm {
+    display: inline-block;
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  div.btn-design-mm:hover {
+    background-color: white;
+    color: #05052f;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  #hemburger_menu {
+    display: none;
+  }
+
+  .right_div {
+    display: inline-block;
+    width: 60%;
+  }
+
+  .show_hide {
+    display: block;
+  }
+
+  .st_panel {
+    width: 22.2%;
+    margin: 5px;
+  }
+
+  .stc_panel_container {
+    text-align: left;
+  }
+
+  .mob_net_val {
+    display: none;
+  }
+
+  .networth_container {
+    display: block;
+    margin-top: 20px;
+    border: 2px solid maroon;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .net_heading {
+    text-align: center;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #908d8d;
+    color: #10528a;
+  }
+
+  .invested_net {
+    margin-bottom: 10px;
+  }
+
+  .stc_logo {
+    display: inline-block;
+    width: 30%;
+    vertical-align: middle;
+  }
+
+  .main_btns {
+    display: inline-block;
+    width: 64%;
+    color: white;
+    margin-left: 4%;
+    text-align: right;
+  }
+
+  img.logo_image {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 5px;
+  }
+
+  .main_menu {
+    background-color: #05052f;
+    display: block;
+  }
+
+  div.btn-design-mm {
+    display: inline-block;
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  div.btn-design-mm:hover {
+    background-color: white;
+    color: #05052f;
+  }
+}
+/*------------ This is tablet  ----------- */
+@media only screen and (min-width: 1281px) {
+  #hemburger_menu {
+    display: none;
+  }
+
+  .right_div {
+    display: inline-block;
+    width: 60%;
+  }
+
+  /* Styles */
+  .show_hide {
+    display: block;
+  }
+
+  .main_container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  div.each_chart_holder {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .mob_net_val {
+    display: none;
+  }
+
+  .networth_container {
+    display: block;
+    margin-top: 20px;
+    border: 2px solid maroon;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .net_heading {
+    text-align: center;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #908d8d;
+    color: #10528a;
+  }
+
+  .invested_net {
+    margin-bottom: 10px;
+  }
+
+  .stc_logo {
+    display: inline-block;
+    width: 30%;
+    vertical-align: middle;
+  }
+
+  .main_btns {
+    display: inline-block;
+    width: 64%;
+    color: white;
+    margin-left: 4%;
+    text-align: right;
+  }
+
+  img.logo_image {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 5px;
+  }
+
+  .main_menu {
+    background-color: #05052f;
+    display: block;
+  }
+
+  div.btn-design-mm {
+    display: inline-block;
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  div.btn-design-mm:hover {
+    background-color: white;
+    color: #05052f;
+  }
+}
