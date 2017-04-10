@@ -712,6 +712,18 @@ span.google_icon {
   }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 599px) {
+  .mob_net_val {
+    display: block !important;
+  }
+
+  .main_menu {
+    display: none !important;
+  }
+
+  .header {
+    display: block !important;
+  }
+
   .difference_net {
     margin-top: 10px;
   }
@@ -744,9 +756,10 @@ span.google_icon {
     display: inline-block;
   }
 
-  div#hemburger_menu {
+  #hemburger_menu {
     background-color: #05052f;
     color: white;
+    display: block !important;
   }
 
   span.hem_menu_text {
@@ -819,7 +832,7 @@ span.google_icon {
   }
 
   .right_div {
-    display: none;
+    display: none !important;
   }
 
   .left_div {
@@ -838,9 +851,9 @@ span.google_icon {
   }
 
   .st_panel {
-    width: 100%;
+    width: 100% !important;
     display: block;
-    max-width: 400px;
+    max-width: 400px !important;
   }
 
   .panel_buttons {
@@ -908,9 +921,10 @@ span.google_icon {
     display: inline-block;
   }
 
-  div#hemburger_menu {
+  #hemburger_menu {
     background-color: #05052f;
     color: white;
+    display: block !important;
   }
 
   span.hem_menu_text {
@@ -1040,6 +1054,18 @@ span.google_icon {
   }
 }
 @media only screen and (min-device-width: 600px) and (max-device-width: 768px) {
+  .mob_net_val {
+    display: block !important;
+  }
+
+  .main_menu {
+    display: none !important;
+  }
+
+  .header {
+    display: block !important;
+  }
+
   .formlbl {
     display: block;
     width: 100%;
@@ -1068,9 +1094,10 @@ span.google_icon {
     display: inline-block;
   }
 
-  div#hemburger_menu {
+  #hemburger_menu {
     background-color: #05052f;
     color: white;
+    display: block !important;
   }
 
   span.hem_menu_text {
@@ -1179,7 +1206,7 @@ span.google_icon {
   }
 
   .right_div {
-    display: none;
+    display: none !important;
   }
 
   .left_div {
@@ -1256,9 +1283,10 @@ span.google_icon {
     display: inline-block;
   }
 
-  div#hemburger_menu {
+  #hemburger_menu {
     background-color: #05052f;
     color: white;
+    display: block !important;
   }
 
   span.hem_menu_text {
@@ -1446,16 +1474,11 @@ span.google_icon {
     margin-top: 15px;
   }
 
-  #hemburger_menu {
-    display: none;
-  }
-
   .right_div {
     display: inline-block;
     width: 49%;
   }
 
-  /* Styles */
   .show_hide {
     display: block;
   }
