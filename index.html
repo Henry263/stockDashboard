@@ -8,10 +8,6 @@
     <script src="https://cdn.anychart.com/js/7.13.0/anychart-bundle.min.js"></script>
     <script src="dist/modal.min.js"></script>
     <script src="dist/index.min.js"></script>
-    <!--
-    <script src="scripts/testyahoo.js"></script>
-    <script src="scripts/base.js"></script>
-    -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
@@ -63,6 +59,7 @@
             <button data-target="get_usr_keyModal" data-toggle="modal" id="get_key_popup">Get the user key</button>
             <button data-target="new_usr_keyModal" data-toggle="modal" id="newUser_key_popup">New user info</button>
             <button data-target="new_feature_keyModal" data-toggle="modal" id="new_featuer_popup">New user info</button>
+            <button data-target="validLabelError" data-toggle="modal" id="raiselabelerror">Label not found</button>
             <button  id="stop_timer">Stop Timer button.</button>
         </div>
 
@@ -85,6 +82,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
         <div class="row2">
@@ -129,6 +127,17 @@
                         </div>
                     </div>
                 </div>
+                <div class="nws_heading">Recent Stock News
+                    <span class="sponser_text">( powered by</span>
+                    <span class="google_icon">
+                        <img class="google_icon_style" src="images/google_icons_sm.png"/>
+                    </span>
+                    <span class="sponser_text">)</span>
+                </div>
+                <div class="news_holder">
+                    <div class="nw_container"></div>
+                </div>
+
             </div>
 
         </div>
@@ -198,6 +207,17 @@
                 </div>
             </div>
 
+            <!-- Error if label is not valid -->
+            <div id="validLabelError" class="modal">
+                <div class="modal-window">
+                    <span class="close" data-dismiss="modal">&times;</span>
+                    <div>
+                        <h4>Stock Label Error</h4>
+                        <p>Label is not found please add the correct symbol.</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- New User Modal -->
             <div id="new_signup" class="modal">
                 <div class="modal-window sign_up_modal">
@@ -242,7 +262,7 @@
                                     <div class="spacing">
                                         <div class="formlbl_signup"><span><label class="skey">Secret Key</label></span></div>
                                         <div class="forminpt">
-                                            <span><input class="txtbox_style s_key" type="text" data-intype="text"/></span><span class="doller_sign">$</span>
+                                            <span><input class="txtbox_style s_key" type="text" data-intype="alphanum"/></span><span class="doller_sign">$</span>
                                             <span class="icon-tip init_disable"><i class="fa fa-exclamation-triangle tooltip-contain">
                                         <span class="tooltiptext">Alpha/Numeric without special character.</span></i></span>
                                         </div>
@@ -270,12 +290,14 @@
                     </div>
                     <div class="formcontainer">
                         <div class="add_stock_header">Add Stock</div>
+                        <div class="edit_stock_header">Edit Stock entities</div>
+                        <div class="delete_stock_header">Delete stock</div>
                         <div class="left_col">
                             <div class="form_fields_holder" id="newStockFields">
                                 <div class="spacing">
                                     <div class="formlbl"><span><label class="stc_name">StockName(Like "FB" for facebook)</label></span></div>
                                     <div class="forminpt">
-                                        <span><input class="txtbox_style stc_name_txt" type="text" data-intype="text"/></span>
+                                        <span><input class="txtbox_style stc_name_txt" id="stok_name_lbl" type="text" data-intype="text"/></span>
                                         <span class="icon-tip init_disable"><i class="fa fa-exclamation-triangle tooltip-contain">
                                         <span class="tooltiptext">Accept only alphabets.</span></i></span>
                                     </div>
@@ -322,6 +344,7 @@
                         <div class="right_col">
                             <div class="btn_submit"><button type="button" value="" class="modal_btn_style common_btn_styles" id="getStockVal">Add stock to portfolio</button>
                                 <button type="button" value="" class="modal_btn_style common_btn_styles" id="updateStockVal">Update stock details</button>
+                                <button type="button" value="" class="modal_btn_style common_btn_styles" id="deleteStock">Delete Stock</button>
                             </div>
                         </div>
 

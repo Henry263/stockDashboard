@@ -32,7 +32,7 @@ th {
 
 .left_div {
   display: inline-block;
-  width: 38%;
+  width: 49%;
   vertical-align: top;
 }
 .left_div div#portfolioChart {
@@ -220,11 +220,11 @@ span.icon_wrap {
 }
 
 .icon_size {
-  font-size: 14px;
+  font-size: 0.7rem;
 }
 
 .up-doen-resize {
-  font-size: 20px;
+  font-size: 1.1rem;
 }
 
 span.change_prcnt_sign {
@@ -340,7 +340,7 @@ span.icon-tip {
   margin-top: 20px;
 }
 
-.add_stock_header {
+.add_stock_header, .edit_stock_header, .delete_stock_header {
   display: block;
   text-align: center;
   border: 2px solid #474556;
@@ -427,6 +427,78 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
   margin-bottom: 10px;
 }
 
+.common_btn_styles {
+  cursor: pointer;
+}
+
+/*-------- This is for news fees ---------------------*/
+.nw_container {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  overflow-y: scroll;
+  position: absolute;
+  width: 95%;
+  height: 95%;
+  border-radius: 10px;
+  border: 1px solid maroon;
+}
+
+.news_holder {
+  position: relative;
+  width: 100%;
+  background-color: rgba(243, 243, 243, 0.79);
+  height: 400px;
+  margin-top: 10px;
+}
+
+.nw_desc div {
+  font-size: 0.7rem;
+}
+
+.news_width {
+  width: 100%;
+}
+
+.news_title {
+  text-decoration: none;
+  color: rgba(19, 117, 199, 0.96);
+  font-size: 0.85rem;
+}
+
+.news_title:hover {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #000b69;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.nws_heading {
+  font-size: 1rem;
+  color: #343477;
+  padding: 5px;
+  margin-top: 10px;
+  border: 1px solid;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #ececec;
+}
+
+span.sponser_text {
+  font-size: 0.1rem;
+}
+
+img.google_icon_style {
+  width: 25px;
+}
+
+span.google_icon {
+  position: relative;
+  top: 2px;
+}
+
+/*---------------------------------------------------*/
 /*------------ This is mobile  ----------- */
 @media only screen and (min-width: 320px) and (max-width: 413px) {
   .mobile_logo {
@@ -457,9 +529,9 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
 
   .networth_container {
     display: block;
-    margin-top: 20px;
+    margin-top: 0px;
     border: 2px solid maroon;
-    padding: 15px;
+    padding: 5px;
     border-radius: 10px;
   }
 
@@ -506,9 +578,9 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
 
   .networth_container {
     display: block;
-    margin-top: 20px;
+    margin-top: 0px;
     border: 2px solid maroon;
-    padding: 15px;
+    padding: 5px;
     border-radius: 10px;
   }
 
@@ -627,6 +699,7 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
   .main_menu {
     background-color: #05052f;
     display: none;
+    border-radius: 5px;
   }
 
   div.btn-design-mm {
@@ -688,7 +761,7 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
   }
 
   .real_time_change.pnl-row1 {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 
   .stc_name.pnl-row1 {
@@ -786,6 +859,7 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
   .main_menu {
     background-color: #05052f;
     display: none;
+    border-radius: 5px;
   }
 
   div.btn-design-mm {
@@ -807,9 +881,9 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
 
   .networth_container {
     display: block;
-    margin-top: 20px;
+    margin-top: 0px;
     border: 2px solid maroon;
-    padding: 15px;
+    padding: 5px;
     border-radius: 10px;
   }
 
@@ -923,7 +997,7 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
 
   .right_div {
     display: inline-block;
-    width: 60%;
+    width: 49%;
   }
 
   /* Styles */
@@ -941,9 +1015,9 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
 
   .networth_container {
     display: block;
-    margin-top: 20px;
+    margin-top: 0px;
     border: 2px solid maroon;
-    padding: 15px;
+    padding: 5px;
     border-radius: 10px;
   }
 
@@ -956,7 +1030,7 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
   }
 
   .invested_net {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
 
   .panel_buttons {
@@ -1003,6 +1077,7 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
   .main_menu {
     background-color: #05052f;
     display: block;
+    border-radius: 5px;
   }
 
   div.btn-design-mm {
@@ -1017,6 +1092,10 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
     background-color: white;
     color: #05052f;
   }
+
+  .real_time_change.pnl-row1 {
+    font-size: 0.8rem;
+  }
 }
 /*------------ This is medium desktop ----------- */
 @media only screen and (min-width: 1024px) and (max-width: 1279px) {
@@ -1027,7 +1106,7 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
 
   .right_div {
     display: inline-block;
-    width: 60%;
+    width: 49%;
   }
 
   .show_hide {
@@ -1049,9 +1128,9 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
 
   .networth_container {
     display: block;
-    margin-top: 20px;
+    margin-top: 0px;
     border: 2px solid maroon;
-    padding: 15px;
+    padding: 5px;
     border-radius: 10px;
   }
 
@@ -1064,7 +1143,7 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
   }
 
   .invested_net {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
 
   .stc_logo {
@@ -1092,6 +1171,7 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
   .main_menu {
     background-color: #05052f;
     display: block;
+    border-radius: 5px;
   }
 
   div.btn-design-mm {
@@ -1106,6 +1186,10 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
     background-color: white;
     color: #05052f;
   }
+
+  .real_time_change.pnl-row1 {
+    font-size: 0.8rem;
+  }
 }
 @media only screen and (min-width: 1280px) {
   #hemburger_menu {
@@ -1114,7 +1198,7 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
 
   .right_div {
     display: inline-block;
-    width: 60%;
+    width: 49%;
   }
 
   .show_hide {
@@ -1136,9 +1220,9 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
 
   .networth_container {
     display: block;
-    margin-top: 20px;
+    margin-top: 0px;
     border: 2px solid maroon;
-    padding: 15px;
+    padding: 5px;
     border-radius: 10px;
   }
 
@@ -1151,7 +1235,7 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
   }
 
   .invested_net {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
 
   .stc_logo {
@@ -1179,6 +1263,7 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
   .main_menu {
     background-color: #05052f;
     display: block;
+    border-radius: 5px;
   }
 
   div.btn-design-mm {
@@ -1193,6 +1278,10 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
     background-color: white;
     color: #05052f;
   }
+
+  .real_time_change.pnl-row1 {
+    font-size: 0.8rem;
+  }
 }
 /*------------ This is tablet  ----------- */
 @media only screen and (min-width: 1281px) {
@@ -1202,7 +1291,7 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
 
   .right_div {
     display: inline-block;
-    width: 60%;
+    width: 49%;
   }
 
   /* Styles */
@@ -1226,9 +1315,9 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
 
   .networth_container {
     display: block;
-    margin-top: 20px;
+    margin-top: 0px;
     border: 2px solid maroon;
-    padding: 15px;
+    padding: 5px;
     border-radius: 10px;
   }
 
@@ -1241,7 +1330,7 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
   }
 
   .invested_net {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
 
   .stc_logo {
@@ -1269,6 +1358,7 @@ span.cur_net_lbl, span.invet_net_lbl, span.differ_net_lbl {
   .main_menu {
     background-color: #05052f;
     display: block;
+    border-radius: 5px;
   }
 
   div.btn-design-mm {
