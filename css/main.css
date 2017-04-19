@@ -389,6 +389,15 @@ span.icon-tip {
   margin-top: 10px;
 }
 
+img.help_img {
+  width: 100%;
+}
+.modal-window.help_modal_container {
+  width: 80%;
+}
+.add_stock_header.signup_header {
+  margin-top: 20px;
+}
 .scrt_key_btn {
   text-align: center;
   display: inline-block;
