@@ -391,6 +391,7 @@ span.icon-tip {
 
 .scrt_key_btn {
   text-align: center;
+  display: inline-block;
 }
 
 span.cur_net_lbl, span.cur_net_val, span.differ_net_lbl {
